@@ -1,9 +1,9 @@
 package playwithspring.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import playwithspring.model.Comment;
 
-@Component
+@Repository
 public class InMemoryCommentRepository implements CommentRepository {
 
     @Override
