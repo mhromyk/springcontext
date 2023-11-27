@@ -17,6 +17,7 @@ public class CommentService {
     public CommentService(@Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy, CommentRepository commentRepository) {
         this.commentNotificationProxy = commentNotificationProxy;
         this.commentRepository = commentRepository;
+        System.out.println("Comment service has been initialized");
     }
 
     public void publishComment(Comment comment) {
