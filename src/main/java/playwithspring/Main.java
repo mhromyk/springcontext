@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var comment = new Comment("Maks", "This is first comment");
+        var comment = new Comment("Maks", "This is a very first comment");
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         var commentService1 = context.getBean(CommentService.class);

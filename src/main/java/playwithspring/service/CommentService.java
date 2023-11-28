@@ -7,11 +7,14 @@ import playwithspring.model.Comment;
 import playwithspring.proxy.CommentNotificationProxy;
 import playwithspring.repository.CommentRepository;
 
+import java.util.logging.Logger;
+
 @Service
 public class CommentService {
 
     private final CommentNotificationProxy commentNotificationProxy;
     private final CommentRepository commentRepository;
+    private final Logger logger = Logger.getLogger(CommentService.class.getName());
 
     @Autowired
     public CommentService(@Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy, CommentRepository commentRepository) {
@@ -21,7 +24,6 @@ public class CommentService {
     }
 
     public void publishComment(Comment comment) {
-        commentRepository.storeComment(comment);
-        commentNotificationProxy.sendComment(comment);
+        logger.info("Publishing comment: " + comment.text());
     }
 }
