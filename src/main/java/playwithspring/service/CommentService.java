@@ -23,7 +23,8 @@ public class CommentService {
         System.out.println("Comment service has been initialized");
     }
 
-    public void publishComment(Comment comment) {
+    public String publishComment(Comment comment) {
         logger.info("Publishing comment: " + comment.text());
+        return "SUCCESS";
     }
 }
