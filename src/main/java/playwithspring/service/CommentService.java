@@ -27,4 +27,15 @@ public class CommentService {
         logger.info("Publishing comment: " + comment.text());
         return "SUCCESS";
     }
+
+    public String editComment(Comment comment) {
+        logger.info("Editing comment: " + comment.text());
+        return "SUCCESS";
+    }
+
+    @ToLog
+    public String deleteComment(Comment comment) {
+        logger.info("Deleting comment: " + comment.text());
+        return "SUCCESS";
+    }
 }

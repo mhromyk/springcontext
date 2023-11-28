@@ -18,8 +18,12 @@ public class Main {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         var commentService1 = context.getBean(CommentService.class);
 
-        String result = commentService1.publishComment(comment);
-        logger.info(" Main method called commentService1 and received: " + result);
+        String resultPublishing = commentService1.publishComment(comment);
+        String resultEditing = commentService1.editComment(comment);
+        String resultDeleting = commentService1.deleteComment(comment);
+        logger.info(" Main method called commentService1.publishComment and received: " + resultPublishing);
+        logger.info(" Main method called commentService1.editComment and received: " + resultEditing);
+        logger.info(" Main method called commentService1.deleteComment and received: " + resultDeleting);
 
     }
 }
